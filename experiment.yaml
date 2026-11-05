@@ -1,0 +1,8 @@
+metric_definitions:
+  NormSim: "Character-level similarity between PRED and High German reference. Measures standard language attraction."
+  DialectSim: "Character-level similarity between PRED and Dialect reference. Measures preservation of phonological variation."
+  DPS: "DialectSim - NormSim. Positive values indicate dialect-leaning transcription; negative values indicate standardization drift. Validated only when max(NormSim, DialectSim) >= 0.1 to avoid model crash artifacts."
+  
+baseline_control:
+  SwissDial: "Perfect parallel references. Trustworthy absolute DPS."
+  Betthupfel: "Sparsely aligned historical dialect groups. Use for cross-dataset relative trend verification, do not directly average absolute DPS with SwissDial."
